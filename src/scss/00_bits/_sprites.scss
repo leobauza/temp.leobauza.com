@@ -1,0 +1,91 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+*/
+$dribbble-offset-x: -40px;
+$dribbble-offset-y: -5px;
+$dribbble-width: 20px;
+$dribbble-height: 20px;
+$dribbble-total-width: 65px;
+$dribbble-total-height: 60px;
+$dribbble-image: '../img/sprite.svg';
+$dribbble-png-image: '../img/sprite.png';
+$dribbble: 0px 0px -40px -5px 20px 20px 65px 60px '../img/sprite.svg' '../img/sprite.png';
+$github-offset-x: -5px;
+$github-offset-y: -35px;
+$github-width: 20px;
+$github-height: 20px;
+$github-total-width: 65px;
+$github-total-height: 60px;
+$github-image: '../img/sprite.svg';
+$github-png-image: '../img/sprite.png';
+$github: 0px 0px -5px -35px 20px 20px 65px 60px '../img/sprite.svg' '../img/sprite.png';
+$instagram-offset-x: -35px;
+$instagram-offset-y: -35px;
+$instagram-width: 20px;
+$instagram-height: 20px;
+$instagram-total-width: 65px;
+$instagram-total-height: 60px;
+$instagram-image: '../img/sprite.svg';
+$instagram-png-image: '../img/sprite.png';
+$instagram: 0px 0px -35px -35px 20px 20px 65px 60px '../img/sprite.svg' '../img/sprite.png';
+$twitter-offset-x: -5px;
+$twitter-offset-y: -5px;
+$twitter-width: 25px;
+$twitter-height: 20px;
+$twitter-total-width: 65px;
+$twitter-total-height: 60px;
+$twitter-image: '../img/sprite.svg';
+$twitter-png-image: '../img/sprite.png';
+$twitter: 0px 0px -5px -5px 25px 20px 65px 60px '../img/sprite.svg' '../img/sprite.png';
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image}?v=2);
+}
+
+@mixin sprite-png-image($sprite) {
+  $sprite-png-image: nth($sprite, 10);
+  background-image: url(#{$sprite-png-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+  .lt-ie9 & {
+    @include sprite-png-image($sprite);
+  }
+}

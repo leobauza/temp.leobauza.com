@@ -1,0 +1,16 @@
+/*
+ * 04_sections/header
+ * Styles for header section
+ */
+#brand {
+  @include transition(color .5s);
+  color: $text_colour;
+  margin: 0px;
+  &.-active {
+    // color: $brand;
+  }
+}
+
+.site__header {
+  padding: 40px 0px 20px;
+}

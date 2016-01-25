@@ -1,0 +1,175 @@
+/*
+ * 01_elements/lists
+ * Styles for basic html lists
+ */
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+ul, ol {
+  margin: 0 0 20px; //under consideration
+  color: $text_colour;
+}
+ul {
+  font-size: $lists_font_size;
+  padding: 0 0 0 22px;
+  list-style: disc;
+  li {
+    line-height: $lists_line_height;
+    margin: 0 0 10px;
+    /*all nested*/
+    ul {
+      padding-top: 10px;
+      font-size: 100%;//makes all nested ul's be the same size
+      li {
+
+      }
+    }
+    /*expert*/
+    &>ul {
+      &>li {
+        /*madness*/
+        &>ul {
+          &>li {
+            /*inception*/
+            &>ul {
+              background: lighten($black, 91);
+              padding: 20px 50px 10px;
+              margin-top: 10px;
+              &>li {
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+ol {
+  font-size: $lists_font_size;
+  padding: 0 0 0 22px;
+  list-style: decimal;
+  li {
+    line-height: $lists_line_height;
+    margin: 0 0 10px;
+    /*all nested*/
+    ol {
+      padding-top: 10px;
+      font-size: 100%;//makes all nested ol's be the same size
+      li {
+
+      }
+    }
+    /*expert*/
+    &>ol {
+      list-style: lower-latin;
+      &>li {
+        /*madness*/
+        &>ol {
+          list-style: lower-alpha;
+          &>li {
+            /*inception*/
+            &>ol {
+              list-style: katakana;
+              background: lighten($black, 91);
+              padding: 20px 50px 10px;
+              margin-top: 10px;
+              &>li {
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*mixed*/
+ul {
+  ol {
+    padding-top: 10px;
+    font-size: 100%;
+  }
+}
+ol {
+  ul {
+    padding-top: 10px;
+    font-size: 100%;
+  }
+}
+
+/**
+ * Types
+ */
+%list {
+  @extend %group;
+  @include resetList(0 0 38px, 0);
+  li {
+    float: left;
+    clear: both;
+    font-size: $text_size;
+  }
+  strong {
+    font-size: 1.2em;
+    padding: 0px 2px;
+  }
+}
+
+.list--standard {
+  @extend %list;
+  li {
+    padding-bottom: 2px;
+    margin-left: 10px;
+    border-bottom: 2px solid $grey;
+    font-weight: $lightFont;
+  }
+}
+
+.list--links {
+  @extend %list;
+  li {
+
+  }
+  a {
+    display: block;
+    font-weight: $regularFont;
+  }
+  &.-has-icons {
+    li {
+
+    }
+    a {
+      position: relative;
+      &:hover {
+        i {
+          opacity: 1;
+        }
+      }
+    }
+    span {
+      position: relative;
+      display: block;
+      padding: 0px 0px 0px 30px;
+      z-index: 10;
+    }
+    i {
+      @include transition(opacity 1s); 
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      opacity: .5;
+      z-index: 5;
+    }
+  }
+}
+
+
+
+
+

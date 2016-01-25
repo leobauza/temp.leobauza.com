@@ -1,0 +1,20 @@
+/*
+ * 04_sections/footer
+ * Styles for footer section
+ */
+
+.site__footer {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  font-weight: $boldFont;
+  p {
+    margin: 0px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    color: $brand;
+    cursor: none;
+  }
+}

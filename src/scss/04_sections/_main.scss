@@ -1,0 +1,44 @@
+/*
+ * 04_sections/main
+ * Styles for main section
+ */
+.site__main {
+  padding-bottom: 80px;
+}
+
+.intro {
+  font-size: 2.5em;
+  margin: 0 0 40px;
+  font-weight: $lightFont;
+  // color: $grey;
+  cursor: none;
+  a {
+    font-weight: $boldFont;
+    padding: 0 2px;
+  }
+  span {
+    // font-weight: $boldFont;
+  }
+}
+
+.nji {
+  color: $nji;
+  &:hover {
+    color: darken($nji, 10);
+  }
+}
+
+[class*="icon--"] {
+  display: block;
+}
+.icon-- {
+  &twitter {
+    @include sprite($twitter);
+  }
+  &dribbble {
+    @include sprite($dribbble);
+  }
+  &github {
+    @include sprite($github);
+  }
+}

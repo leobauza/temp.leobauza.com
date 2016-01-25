@@ -1,0 +1,46 @@
+/*
+ * 03_collections/boxes
+ * Styles for boxes
+ */
+
+%box {
+  @include marpad(0 0 10px, 0px);
+  @include borderRadius(5px);
+  background: $white;
+  .box__header {
+    @include borderRadius(5px 5px 0px 0px);
+    padding: 10px;
+    background: lighten($default, 20);
+    h1,h2,h3,h4,h5,h6 {
+      color: $text_colour;
+      margin: 0;
+    }
+  }
+  .box__body {
+    padding:10px;
+    font-size: $text_size;
+    line-height: $text_line_height;
+    p {
+      font-size: 100%;
+    }
+  }
+  .box__container { //remove?
+    padding: 0px 10px;
+  }
+  .box__divider { //remove?
+    padding: 10px;
+  }
+}
+
+//box types
+.box--default {
+  @extend %box;
+  border: 1px solid lighten($default, 20);
+  .box__header {
+    background: $default;
+    border-bottom: 1px solid lighten($default, 20);
+    h1,h2,h3,h4,h5,h6 {
+      color: $white;
+    }
+  }
+}
