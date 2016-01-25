@@ -7,7 +7,7 @@
 }
 
 .intro {
-  font-size: 2.5em;
+  font-size: $h2;
   margin: 0 0 40px;
   font-weight: $lightFont;
   // color: $grey;
@@ -40,5 +40,11 @@
   }
   &github {
     @include sprite($github);
+  }
+}
+
+@media (max-width: 43.75em) { // 700px
+  .intro {
+    font-size: $h2_responsive;
   }
 }

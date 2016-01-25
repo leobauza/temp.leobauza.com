@@ -159,7 +159,7 @@ ol {
       z-index: 10;
     }
     i {
-      @include transition(opacity 1s); 
+      @include transition(opacity 1s);
       position: absolute;
       top: 0px;
       left: 0px;
@@ -169,7 +169,18 @@ ol {
   }
 }
 
-
+@media (max-width: 43.75em) { // 700px
+  .list--standard {
+    li {
+      border: none;
+      border-left: 2px solid $grey;
+      margin-left: 0px;
+      margin-bottom: 15px;
+      padding-left: 10px;
+      line-height: 1.5em;
+    }
+  }
+}
 
 
 
