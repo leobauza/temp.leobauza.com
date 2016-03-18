@@ -113,6 +113,12 @@ $global_gutter: 3.183;
 //@media (max-width: 43.75em) { // 700px
 @media (max-width: 59.9375em) { // 959px
 
+  .container {
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   /*margin right instead of margin left to do overflow hidden*/
   [class*="row"] > [class*="span"] {
     float: none;

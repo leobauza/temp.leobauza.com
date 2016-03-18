@@ -14,3 +14,9 @@
 .site__header {
   padding: 40px 0px 20px;
 }
+
+@media (max-width: 59.9375em) { // 959px
+  .site__header {
+    padding: 10px 0px 10px;
+  }
+}

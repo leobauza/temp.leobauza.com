@@ -43,7 +43,7 @@ $('[data-fs]').each(function (k, v) {
       t = $data.t || 20,
       instance = new Fs(fs);
 
-  instance.scrambleAndUnscramble($v, t, k * 500);
+  instance.scrambleAndUnscramble($v, t, k * 50);
 
 });
 
