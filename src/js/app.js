@@ -1,7 +1,7 @@
 "use strict";
 
-var Fs = require('./modules/fancyStrings'),
-    actions = require("./actions");
+var Fs = require('./modules/fancyStrings');
+var actions = require("./actions");
 
 /**
  * DOM Manipulations
