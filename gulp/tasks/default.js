@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var ghPages = require('gulp-gh-pages');
 
 // gulp.task('watch', function(callback) {
 //   gulp.watch('./sites/all/themes/jf/src/js/**/*.js', ['browserify']);
@@ -10,3 +11,9 @@ gulp.task('default', ['watch']);
 // gulp.task('default', function () {
 //   console.log("default gulp task");
 // });
+
+
+gulp.task('deploy', function() {
+  return gulp.src('./web/**/*')
+    .pipe(ghPages());
+});
