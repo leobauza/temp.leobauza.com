@@ -121,17 +121,17 @@ html {
 }
 
 :focus {
-  outline: none;
-  border: none;
+  /* outline: none; */
+  /* border: none; */
 }
 
 a:focus {
-  outline: none;
-  border: none;
+  /* outline: none; */
+  /* border: none; */
 }
 
 a:hover, a:active {
-  outline: 0;
+  /* outline: 0; */
 }
 
 body {
